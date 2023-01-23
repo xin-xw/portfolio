@@ -2,10 +2,11 @@ import NavigationBar from './NavigationBar';
 
 const NavigationBarItems = {
     links: [
-        { label: 'home', link: '/' },
-        { label: 'about me', link: '/about-me' },
-        { label: 'projects', link: '/projects' },
-        { label: 'resume', link: '/resume' },
+        { label: 'home', href: '/' },
+        { label: 'about me', href: '/about' },
+        { label: 'journey', href: '/journey' },
+        { label: 'projects', href: '/projects' },
+
     ],
 };
 

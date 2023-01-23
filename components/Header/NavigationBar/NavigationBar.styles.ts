@@ -8,6 +8,7 @@ export default createStyles((theme) => ({
         zIndex: 1,
         [theme.fn.smallerThan('sm')]: {
             padding: '10px 12px',
+            zIndex: 1,
         },
     },
     dropdown: {
@@ -40,32 +41,46 @@ export default createStyles((theme) => ({
             display: 'none',
         },
     },
+
     link: {
+        radius: 'xs',
         display: 'block',
         lineHeight: 1,
-        padding: '8px 12px',
-        borderRadius: theme.radius.sm,
+        // padding: '8px 12px',
         textDecoration: 'none',
-        color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7],
+        // color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7],
         fontSize: theme.fontSizes.sm,
         fontWeight: 500,
         '&:hover': {
-            backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+            radius: 'xs',
         },
         [theme.fn.smallerThan('sm')]: {
-            borderRadius: 0,
-            padding: theme.spacing.md,
+            // borderRadius: 0,
+            // padding: theme.spacing.sm,
         },
     },
     linkActive: {
+        textDecoration: 'underline',
         '&, &:hover': {
-            backgroundColor: theme.fn.variant({ variant: 'light', color: theme.primaryColor }).background,
-            color: theme.fn.variant({ variant: 'light', color: theme.primaryColor }).color,
+
+            // backgroundColor: theme.fn.variant({ variant: 'light', color: theme.primaryColor }).background,
+            // color: theme.fn.variant({ variant: 'light', color: theme.primaryColor }).color,
         },
     },
     mobileColorTogglePlacement: {
         [theme.fn.largerThan('sm')]: {
             display: 'none',
         },
+    },
+    buttonColor: {
+        color: theme.colorScheme === 'dark' ? 'white' : theme.colors.dark[9],
+        borderColor: theme.colorScheme === 'dark' ? 'white' : theme.colors.dark[9],
+    },
+    navLink: {
+        border: 'none',
+    },
+    logo: {
+        border: 'none',
+        cursor: 'pointer',
     },
 }));
