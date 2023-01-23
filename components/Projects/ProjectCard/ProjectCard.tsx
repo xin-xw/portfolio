@@ -7,7 +7,7 @@ interface ProjectCardProps {
     description: string;
     project_icon: string;
     project_link: string;
-    avatars: { label: string, url: string }[];
+    avatars: { label: string, url: any }[];
     isSoloProject: boolean;
     tags: { label: string }[]
 

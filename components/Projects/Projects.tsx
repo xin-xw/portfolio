@@ -89,7 +89,6 @@ const splice = {
         { label: 'Xin', url: 'https://media.licdn.com/dms/image/D5603AQHEw1xSgOMyDg/profile-displayphoto-shrink_100_100/0/1669740190423?e=1680134400&v=beta&t=J1gRthJupwhd_t8SVO2vQuvX6nxQdhGhymoVxxMGnj0' },
         { label: 'Jeanette', url: 'https://media.licdn.com/dms/image/D5603AQHzs-wUnJj3KQ/profile-displayphoto-shrink_100_100/0/1665183613763?e=1680134400&v=beta&t=3CQrIQqVI-8IZunnngTqsxi5e2HWGZ8XuZk861-96WE' },
         { label: 'Hongan', url: null },
-
     ],
     tags: [
         { label: 'C++' },
