@@ -24,9 +24,10 @@ import { useColorScheme, useMediaQuery } from '@mantine/hooks';
 import useStyles from './About.styles';
 import { Contact } from './Contact/Contact';
 import Music from './Music/Music';
-import MusicRecentTrack from './Music/MusicRecentTrack'
-import {ArticleCardImage, MusicNowPlaying} from "./Music/MusicNowPlaying";
-import AboutCarousel from "./AboutCarousel/AboutCarousel";
+import MusicRecentTrack from './Music/MusicRecentTrack';
+import { ArticleCardImage, MusicNowPlaying } from './Music/MusicNowPlaying';
+import AboutCarousel from './AboutCarousel/AboutCarousel';
+
 export function About() {
     const { classes } = useStyles();
     const matches = useMediaQuery('(min-width: 1200px)');
@@ -53,22 +54,19 @@ export function About() {
                 </Box>
                 <Box>
 
-                    {/*<AboutCarousel></AboutCarousel>*/}
+                    {matches === true ? <AboutCarousel /> : null }
                 </Box>
 
-
             </Grid.Col>
-            <Grid.Col p={'xl'} md={4}>
-                <Flex direction={"column"}>
+            <Grid.Col p="xl" md={4}>
+                <Flex direction="column">
                     <Contact />
-                    <MusicNowPlaying></MusicNowPlaying>
+                    <MusicNowPlaying />
                     <Music />
                 </Flex>
 
-
             </Grid.Col>
         </Grid>
-
 
     );
 }
