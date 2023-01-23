@@ -75,7 +75,7 @@ export function Welcome() {
                                     </List.Item>
 
                                 </Link>
-                                <Link href="/about" onClick={() => router.push('/about')}>
+                                <Link href="/journey" onClick={() => router.push('/about')}>
                                     <List.Item className={classes.textUnderlineBold}>
                                         Experiences and accomplishments
                                     </List.Item>
