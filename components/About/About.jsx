@@ -31,7 +31,6 @@ import AboutCarousel from './AboutCarousel/AboutCarousel';
 export function About() {
     const { classes } = useStyles();
     const matches = useMediaQuery('(min-width: 1200px)');
-    const colorScheme = useColorScheme();
 
     return (
         <Grid>
@@ -50,18 +49,21 @@ export function About() {
                             'me in either language!'}
                     </Text>
                     <Divider size="xs" my="xs" labelPosition="center" label="✽ ✽ ✽" />
+                    <Music />
                 </Box>
-                <Box>
+
+                <Divider size="xs" my="xs" labelPosition="center" label="✽ ✽ ✽" />
+                <Box maxWidth="300px">
 
                     {matches === true ? <AboutCarousel /> : null }
-                </Box>
 
+                </Box>
             </Grid.Col>
             <Grid.Col md={3}>
                 <Stack direction="column" sx={{ alignItems: 'center' }}>
                     <Contact />
                     <MusicNowPlaying />
-                    <Music />
+
                 </Stack>
 
             </Grid.Col>
