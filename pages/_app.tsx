@@ -42,6 +42,7 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
             group: 'pages',
             onTrigger: () => { router.push('/projects'); } },
         { title: 'Resume', group: 'contact', onTrigger: () => { router.push('https://docs.google.com/document/d/1gGoY0ABd9oIEEsBSc0reOUmQMlBdp2frPLuuO9Y-kKw/edit?usp=sharing'); } },
+        { title: 'GitHub', group: 'contact', onTrigger: () => { router.push('https://github.com/xinwang-git/'); } },
         { title: 'Email', group: 'contact', onTrigger: () => { router.push('mailto:xin@xinw.org'); } },
         { title: 'LinkedIn', group: 'contact', onTrigger: () => { router.push('https://www.linkedin.com/in/xin-w/'); } },
     ];
