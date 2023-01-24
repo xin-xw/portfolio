@@ -1,7 +1,7 @@
 import {
     Center,
     Accordion,
-
+Group,
 } from '@mantine/core';
 import MusicTopTracksMapping from './MusicTopTracksMapping';
 import MusicTopArtistsMapping from './MusicTopArtistsMapping';
@@ -11,7 +11,7 @@ export default function Music() {
     return (
 
         <Center>
-
+            <Group>
             <Accordion variant="separated" sx={{ width: '500px' }} radius="xs" chevronPosition="right">
                 <Accordion.Item value="topSongs">
                     <Accordion.Control>Top songs this month</Accordion.Control>
@@ -26,6 +26,7 @@ export default function Music() {
                 </Accordion.Item>
 
             </Accordion>
+            </Group>
         </Center>
     );
 }
