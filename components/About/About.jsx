@@ -35,12 +35,11 @@ export function About() {
 
     return (
         <Grid>
-
-            <Grid.Col md={8}>
+            <Grid.Col md={9}>
                 <Center>
-                    <Box className={classes.tableWrapper}>
-                        <Image className={classes.table} src="/about/table.svg" />
-                    </Box>
+                <Box className={classes.tableWrapper}>
+                    <Image opacity="90%" className={classes.table} src="/about/table.svg" />
+                </Box>
                 </Center>
                 <Box className={classes.description}>
                     <Text>
@@ -58,12 +57,12 @@ export function About() {
                 </Box>
 
             </Grid.Col>
-            <Grid.Col p="xl" md={4}>
-                <Flex direction="column">
+            <Grid.Col md={3}>
+                <Stack direction="column" sx={{ alignItems: 'center' }}>
                     <Contact />
                     <MusicNowPlaying />
                     <Music />
-                </Flex>
+                </Stack>
 
             </Grid.Col>
         </Grid>

@@ -4,14 +4,13 @@ export const HEADER_HEIGHT = 70;
 
 export default createStyles((theme) => ({
     root: {
-        position: 'relative',
+        position: 'absolute',
         zIndex: 1,
-        [theme.fn.smallerThan('sm')]: {
-            padding: '10px 12px',
-            zIndex: 1,
-        },
+        padding: theme.spacing.sm,
+        marginBottom: '100px',
     },
     dropdown: {
+
         position: 'absolute',
         top: HEADER_HEIGHT,
         right: 0,
@@ -20,7 +19,9 @@ export default createStyles((theme) => ({
         borderTopRightRadius: 0,
         borderTopLeftRadius: 0,
         borderTopWidth: 0,
-        overflow: 'hidden',
+
+        border: 'none',
+
         [theme.fn.largerThan('sm')]: {
             display: 'none',
         },
@@ -43,31 +44,26 @@ export default createStyles((theme) => ({
     },
 
     link: {
-        radius: 'xs',
+        // radius: 'xs',
         display: 'block',
-        lineHeight: 1,
-        // padding: '8px 12px',
         textDecoration: 'none',
-        // color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7],
-        fontSize: theme.fontSizes.sm,
+        color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7],
+        fontSize: '10px',
         fontWeight: 500,
-        '&:hover': {
-            radius: 'xs',
-        },
+
         [theme.fn.smallerThan('sm')]: {
+            fontSize: '14px',
             // borderRadius: 0,
             // padding: theme.spacing.sm,
         },
     },
     linkActive: {
         textDecoration: 'underline',
-        '&, &:hover': {
+        fontSize: '10px',
 
-            // backgroundColor: theme.fn.variant({ variant: 'light', color: theme.primaryColor }).background,
-            // color: theme.fn.variant({ variant: 'light', color: theme.primaryColor }).color,
-        },
     },
     mobileColorTogglePlacement: {
+
         [theme.fn.largerThan('sm')]: {
             display: 'none',
         },

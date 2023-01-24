@@ -2,48 +2,53 @@ import { useState } from 'react';
 import NextApp, { AppProps, AppContext } from 'next/app';
 import { getCookie, setCookie } from 'cookies-next';
 import Head from 'next/head';
-import { MantineProvider, Container, ColorScheme, ColorSchemeProvider } from '@mantine/core';
+import { MantineProvider, TypographyStylesProvider, Box, Title, MantineThemeOverride, Container, ColorScheme, ColorSchemeProvider, Global } from '@mantine/core';
 import { NotificationsProvider } from '@mantine/notifications';
 import { SpotlightAction, SpotlightProvider } from '@mantine/spotlight';
 import { useRouter } from 'next/router';
 import { IconHome, IconDirections, IconUser, IconBrandAsana } from '@tabler/icons';
-import { useHref } from 'react-router';
 import NavigationBarUsage from '../components/Header/NavigationBar/NavigationBar.story';
-
+import Fonts from '../components/Fonts';
 // @ts-ignore
-const onTrigger = () => { console.log('spotlight opened'); };
+
+// import { interBold } from '../../../../../fonts/InterBold.ttf';
+// import { interSemiBold } from '../public/fonts/InterSemiBold.ttf';
+// import { interExtraBold } from '../public/fonts/InterExtraBold.ttf';
+// import { interLight } from '../public/fonts/InterLight.ttf';
+// import { interMedium } from '../public/fonts/InterMedium.ttf';
+// import { interRegular } from '../public/fonts/InterRegular.ttf';
 
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {
-const router = useRouter();
-const actions: SpotlightAction[] = [
-    { title: 'Home',
-        description: 'To the home page',
-        group: 'pages',
-        icon: <IconHome size={18} />,
-        onTrigger: () => { router.push('/'); } },
-    { title: 'About me',
-        description: 'Dive deeper into my interests',
-        group: 'pages',
-        icon: <IconUser size={18} />,
-        onTrigger: () => { router.push('/about'); } },
-    { title: 'Journey',
-        description: 'Past and present experiences and accomplishments',
-        group: 'pages',
-        icon: <IconDirections size={18} />,
-        onTrigger: () => { router.push('/journey'); } },
-    { title: 'Projects',
-        description: 'More information about the projects that I\'ve worked on',
-        icon: <IconBrandAsana size={18} />,
-        group: 'pages',
-        onTrigger: () => { router.push('/projects'); } },
-    { title: 'Resume', group: 'contact', onTrigger: () => { router.push('https://docs.google.com/document/d/1gGoY0ABd9oIEEsBSc0reOUmQMlBdp2frPLuuO9Y-kKw/edit?usp=sharing'); } },
-    { title: 'Email', group: 'contact', onTrigger: () => { router.push('mailto:xin@xinw.org'); } },
-    { title: 'LinkedIn', group: 'contact', onTrigger: () => { router.push('https://www.linkedin.com/in/xin-w/'); } },
-];
+    const router = useRouter();
+    const actions: SpotlightAction[] = [
+        { title: 'Home',
+            description: 'To the home page',
+            group: 'pages',
+            icon: <IconHome size={18} />,
+            onTrigger: () => { router.push('/'); } },
+        { title: 'About me',
+            description: 'Dive deeper into my interests',
+            group: 'pages',
+            icon: <IconUser size={18} />,
+            onTrigger: () => { router.push('/about'); } },
+        { title: 'Journey',
+            description: 'Past and present experiences and accomplishments',
+            group: 'pages',
+            icon: <IconDirections size={18} />,
+            onTrigger: () => { router.push('/journey'); } },
+        { title: 'Projects',
+            description: 'More information about the projects that I\'ve worked on',
+            icon: <IconBrandAsana size={18} />,
+            group: 'pages',
+            onTrigger: () => { router.push('/projects'); } },
+        { title: 'Resume', group: 'contact', onTrigger: () => { router.push('https://docs.google.com/document/d/1gGoY0ABd9oIEEsBSc0reOUmQMlBdp2frPLuuO9Y-kKw/edit?usp=sharing'); } },
+        { title: 'Email', group: 'contact', onTrigger: () => { router.push('mailto:xin@xinw.org'); } },
+        { title: 'LinkedIn', group: 'contact', onTrigger: () => { router.push('https://www.linkedin.com/in/xin-w/'); } },
+    ];
   const { Component, pageProps } = props;
   const [colorScheme, setColorScheme] = useState<ColorScheme>(props.colorScheme);
 
-  const toggleColorScheme = (value?: ColorScheme) => {
+    const toggleColorScheme = (value?: ColorScheme) => {
     const nextColorScheme = value || (colorScheme === 'dark' ? 'light' : 'dark');
     setColorScheme(nextColorScheme);
     setCookie('mantine-color-scheme', nextColorScheme, { maxAge: 60 * 60 * 24 * 30 });
@@ -54,65 +59,74 @@ const actions: SpotlightAction[] = [
       <Head>
         <title>@xin</title>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
-        <link rel="shortcut icon" href="/favicon.svg" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Inter&display=optional"
+            rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+            rel="stylesheet"
+          />
+
       </Head>
 
       <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
-        <MantineProvider
-          theme={{
-              colorScheme,
-              colors: {
-                  'gundam-blue': [
-                      '#E6E9EE',
-                      '#CBD1DF',
-                      '#AFBCD3',
-                      '#93A6CD',
-                      '#7492CB',
-                      '#527DD0',
-                      '#2C68DC',
-                      '#3361BB',
-                      '#3A5B9C',
-                      '#3D5583',
-                  ],
-                  dark: [
-                      '#E6E6E6',
-                      '#353535',
-                      '#E6E6E6',
-                      '#2C2C2C',
-                      '#282828',
-                      '#242424',
-                      '#212121',
-                      '#1E1E1E',
-                      '#1B1B1B',
-                      '#181818',
-                  ],
-              },
-              defaultRadius: 'xs',
-              primaryColor: 'gundam-blue',
-              primaryShade: { light: 5, dark: 7 },
-              fontSizes: {
-                  xs: 10,
-                  sm: 12,
-                  md: 16,
-                  lg: 16,
-                  xl: 20,
-              },
-              headings: {
-                  // properties for all headings
+          <Fonts />
+          <MantineProvider
+            theme={
 
-                  // properties for individual headings, all of them are optional
-                  sizes: {
-                      h1: { fontWeight: 700, fontSize: 22 },
-                      // h2: { fontSize: 28, lineHeight: 1.5 },
-                      // ...up to h6
-                      // h6: { fontWeight: 900 },
-                  },
-              },
+                {
+                    colorScheme,
+                    colors: {
+                        'gundam-blue': [
+                            '#E6E9EE',
+                            '#CBD1DF',
+                            '#AFBCD3',
+                            '#93A6CD',
+                            '#7492CB',
+                            '#527DD0',
+                            '#2C68DC',
+                            '#3361BB',
+                            '#3A5B9C',
+                            '#3D5583',
+                        ],
+                        dark: [
+                            '#E6E6E6',
+                            '#353535',
+                            '#E6E6E6',
+                            '#2C2C2C',
+                            '#282828',
+                            '#242424',
+                            '#212121',
+                            '#1E1E1E',
+                            '#1B1B1B',
+                            '#181818',
+                        ],
+                    },
 
-          }}
-          withGlobalStyles
-          withNormalizeCSS
-        >
+                    defaultRadius: 'xs',
+                    primaryColor: 'gundam-blue',
+                    primaryShade: { light: 5, dark: 7 },
+                    fontSizes: {
+                        xs: 12,
+                        sm: 13,
+                        md: 14,
+                        lg: 16,
+                        xl: 20,
+                    },
+
+                    fontFamily: 'Gotham, sans-serif',
+                    headings: { fontFamily: 'Lora, serif' },
+                    // fontFamily: 'Lora',
+                    // headings: { fontFamily: 'Inter, sans-serif' },
+
+                }
+          }
+            withGlobalStyles
+            withNormalizeCSS
+          >
           <SpotlightProvider
             shortcut={['mod + P', 'mod + K', '/']}
             actions={actions}
@@ -120,15 +134,17 @@ const actions: SpotlightAction[] = [
           >
           <NotificationsProvider>
 
-            <Container sx={{ paddingBottom: '150px' }}>
             <NavigationBarUsage />
+              <Container sx={{ paddingTop: '150px' }}>
               <Component {...pageProps} key={router.asPath} />
 
-            </Container>
+              </Container>
+
           </NotificationsProvider>
           </SpotlightProvider>
 
-        </MantineProvider>
+          </MantineProvider>
+
       </ColorSchemeProvider>
     </>
   );

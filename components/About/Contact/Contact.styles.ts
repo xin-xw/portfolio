@@ -2,11 +2,9 @@ import { createStyles } from '@mantine/core';
 
 export default createStyles((theme) => ({
     root: {
-      marginBottom: "15px"
+      marginBottom: '10px',
     },
-    titleWrapper: {
-        align: 'center',
-    },
+
     title: {
         fontSize: 22,
         fontWeight: 700,
@@ -38,14 +36,19 @@ export default createStyles((theme) => ({
         fontWeight: 500,
     },
     buttonColor: {
-        width:"266px",
+        width: '100%',
+        maxWidth: '500px',
         color: theme.colorScheme === 'dark' ? 'white' : theme.colors.dark[9],
         borderColor: theme.colorScheme === 'dark' ? 'white' : theme.colors.dark[9],
         [theme.fn.smallerThan('md')]: {
-            width: "325px",
-        }
+            width: '325px',
+        },
     },
     section: {
-        margin: '10px',
+        display: 'flex',
+
+        paddingTop: '10px',
+        align: 'left',
+
     },
 }));

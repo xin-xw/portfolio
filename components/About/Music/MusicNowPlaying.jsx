@@ -5,18 +5,20 @@ import { IconMusic } from '@tabler/icons';
 
 const useStyles = createStyles((theme) => ({
     root: {
-        marginBottom: 0,
+
+        root: {
+            marginBottom: '10px',
+        },
     },
     card: {
-        maxHeight: '500px',
-        maxWidth: '500px',
+
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
         alignItems: 'flex-end',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        marginBottom: '25px',
+
     },
 
     title: {
@@ -36,9 +38,13 @@ const useStyles = createStyles((theme) => ({
         marginTop: 50,
     },
     selfPlayer: {
-        borderColor: theme.colorScheme === 'dark' ? 'white' : 'black',
-        color: theme.colorScheme === 'dark' ? 'white' : 'black',
+        width: '100%',
         maxWidth: '500px',
+        color: theme.colorScheme === 'dark' ? 'white' : theme.colors.dark[9],
+        borderColor: theme.colorScheme === 'dark' ? 'white' : theme.colors.dark[9],
+        [theme.fn.smallerThan('md')]: {
+            width: '325px',
+        },
     },
 }));
 
@@ -50,13 +56,21 @@ export function MusicNowPlaying() {
     const { classes } = useStyles();
 
     return (
+
         <Box className="classes.root" align="center">
+            <Box classNames="classes.root">
+                <Paper sx={{ paddingBottom: '10px' }}>
+                    <Title order={5} align="left">
+                        Now playing
+                    </Title>
+                </Paper>
+
             <Paper withBorder className={classes.selfPlayer} border={5}>
                 <Text size="sm">
                     <Paper p={5}>
-                        <Text className={classes.category} size="xs">
-                            Now playing
-                        </Text>
+                        {/*<Text className={classes.category} size="xs">*/}
+                        {/*    Now playing*/}
+                        {/*</Text>*/}
                         <Text fw={700}>
                             {data?.title}
                         </Text>
@@ -85,6 +99,7 @@ export function MusicNowPlaying() {
             </Button>
         </Paper>
 
+            </Box>
         </Box>
     );
 }

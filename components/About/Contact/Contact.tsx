@@ -1,9 +1,11 @@
 import {
     Title,
+    Blockquote,
     Box,
     Text,
     List,
     Paper,
+    Flex,
     Timeline,
     Divider,
     Center,
@@ -32,54 +34,60 @@ export function Contact() {
     return (
 <Center>
         <Box className={classes.root}>
-            <Paper className={classes.section}>
+            <Paper>
+                <Title order={5}>
+                    Contact me
+                </Title>
+            </Paper>
+
+            <Flex className={classes.section}>
                 <Button
                   component="a"
                   href="https://www.linkedin.com/in/xin-w"
                   target="_blank"
                   className={classes.buttonColor}
                   variant="outline"
-                  rightIcon={<IconBrandLinkedin />}
+                  leftIcon={<IconBrandLinkedin />}
                 >
-                    Connect with me on LinkedIn
+                    Connect on LinkedIn
                 </Button>
-            </Paper>
-            <Paper className={classes.section}>
+            </Flex>
+            <Flex className={classes.section}>
                 <Button
                   component="a"
                   href="https://github.com/xinwang-git"
                   target="_blank"
                   className={classes.buttonColor}
                   variant="outline"
-                  rightIcon={<IconBrandGithub />}
+                  leftIcon={<IconBrandGithub />}
                 >
-                    View repositories on Github
+                    Browse personal GitHub
                 </Button>
-            </Paper>
-            <Paper className={classes.section}>
+            </Flex>
+            <Flex className={classes.section}>
                 <Button
                   component="a"
                   href="mailto:xin@xinw.org"
                   target="_blank"
                   className={classes.buttonColor}
                   variant="outline"
-                  rightIcon={<IconMailForward />}
+                  leftIcon={<IconMailForward />}
                 >
                     Send me an e-mail
                 </Button>
-            </Paper>
-            <Paper className={classes.section}>
+            </Flex>
+            <Flex className={classes.section}>
                 <Button
                   component="a"
                   href="/about/Xin_Wang_Resume.pdf"
                   target="_blank"
                   className={classes.buttonColor}
                   variant="outline"
-                  rightIcon={<IconFileDescription />}
+                  leftIcon={<IconFileDescription />}
                 >
-                    View my current resume
+                    View current resume
                 </Button>
-            </Paper>
+            </Flex>
         </Box>
 </Center>
     );

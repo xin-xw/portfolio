@@ -23,7 +23,7 @@ export default createStyles((theme) => ({
       marginTop: '-85px',
       marginBottom: '0px',
     },
-    filter: theme.colorScheme === 'dark' ? 'invert(90%)' : 'none',
+    filter: theme.colorScheme === 'dark' ? 'invert(100%)' : 'none',
     maxWidth: '450px',
     maxHeight: '450px',
 
