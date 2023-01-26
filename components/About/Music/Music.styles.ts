@@ -1,19 +1,27 @@
 import { createStyles } from '@mantine/core';
 
 export default createStyles((theme) => ({
+
     root: {
         // backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
-
-        borderRadius: theme.radius.xs,
-    },
-    button: {
+        align: 'center',
         width: '100%',
-        maxWidth: '500px',
+        maxWidth: '225px',
         color: theme.colorScheme === 'dark' ? 'white' : theme.colors.dark[9],
         borderColor: theme.colorScheme === 'dark' ? 'white' : theme.colors.dark[9],
         [theme.fn.smallerThan('md')]: {
             width: '325px',
         },
+    },
+    button: {
+        width: '100%',
+        color: theme.colorScheme === 'dark' ? 'white' : theme.colors.dark[9],
+        borderColor: theme.colorScheme === 'dark' ? 'white' : theme.colors.dark[9],
+
+    },
+    drawer: {
+        padding: 'xl',
+
     },
     item: {
         // backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
@@ -36,9 +44,7 @@ export default createStyles((theme) => ({
         maxWidth: '500px',
         color: theme.colorScheme === 'dark' ? 'white' : theme.colors.dark[9],
         borderColor: theme.colorScheme === 'dark' ? 'white' : theme.colors.dark[9],
-        [theme.fn.smallerThan('md')]: {
-            width: '325px',
-        },
+
     },
     chevron: {
         '&[data-rotate]': {

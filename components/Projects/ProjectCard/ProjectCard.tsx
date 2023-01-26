@@ -46,34 +46,39 @@ export default function ProjectCard({ title, project_link, project_icon, descrip
         <Grid align="flex-end">
             <Card>
             <Box>
-                <Group spacing={4}>
-                    {features}
-                </Group>
 
                 <Flex direction="row" className={classes.projectIconTitle}>
-                    <Avatar src={project_icon} size="sm" />
+                    <Group spacing="xs">
+                        <Avatar src={project_icon} size="md" />
+                        <Title order={2} className={classes.cardTitle}>
+                            {title}
+                        </Title>
 
-                    <Title className={classes.cardTitle}>
-                        {title}
-                    </Title>
                     <ActionIcon component="a" href={project_link} target="_blank" variant="outline" className={classes.actionLink}>
                         <IconLink size={20} />
                     </ActionIcon>
+                    </Group>
                 </Flex>
 
             </Box>
+
+            <Grid.Col span={3} style={{ minHeight: 10 }} />
+                <Box sx={{ paddingTop: 10, paddingBottom: 10 }}>
+                    <Group spacing={6}>
+                        {features}
+                    </Group>
+                </Box>
+                <Box className={classes.cardDescription}>
+                    {description}
+                </Box>
+            <Grid.Col span={3} style={{ minHeight: 30 }} />
                 <Group className={classes.collaborators}>
                     {teammates}
                     {isSoloProject === true ? <Badge color="red" size="sm" radius="lg" variant="filled">Solo</Badge>
-                    : <Badge color="green" size="sm" radius="lg" variant="filled">Collaboration</Badge>}
+                        : <Badge color="green" size="sm" radius="lg" variant="filled">Collaboration</Badge>}
 
                 </Group>
-            <Box className={classes.cardDescription}>
-                {description}
-            </Box>
 
-            <Grid.Col span={3} style={{ minHeight: 30 }} />
-            <Grid.Col span={3} style={{ minHeight: 60 }} />
             </Card>
         </Grid>
         </Card>

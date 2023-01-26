@@ -1,4 +1,5 @@
 import useSWR from 'swr';
+import { SimpleGrid } from '@mantine/core';
 import MusicTopTracks from './MusicTopTracks';
 
 export default function MusicTopTracksMapping() {
@@ -12,11 +13,13 @@ export default function MusicTopTracksMapping() {
     return (
         <>
             {data.tracks.map((track, index) => (
+
                 <MusicTopTracks
                   ranking={index + 1}
                   key={track.songUrl}
                   {...track}
                 />
+
             ))}
         </>
     );

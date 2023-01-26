@@ -1,4 +1,4 @@
-import { createStyles, Overlay, HoverCard, Image, Paper, Box, Text, Title, Button } from '@mantine/core';
+import { createStyles, Loader, Stack, Group, Overlay, HoverCard, Image, Paper, Box, Text, Title, Button } from '@mantine/core';
 import useSWR from 'swr';
 import { useState } from 'react';
 import { IconMusic } from '@tabler/icons';
@@ -29,10 +29,9 @@ const useStyles = createStyles((theme) => ({
         marginTop: theme.spacing.xs,
     },
 
-    category: {
-        opacity: 1,
-        fontWeight: 700,
-        textTransform: 'uppercase',
+    songData: {
+      textTransform: 'uppercase',
+
     },
     button: {
         marginTop: 50,
@@ -42,12 +41,12 @@ const useStyles = createStyles((theme) => ({
         maxWidth: '500px',
         color: theme.colorScheme === 'dark' ? 'white' : theme.colors.dark[9],
         borderColor: theme.colorScheme === 'dark' ? 'white' : theme.colors.dark[9],
-        [theme.fn.smallerThan('md')]: {
-            width: '325px',
-        },
     },
 }));
 
+export function NowPlayingLoader() {
+    return <Loader color="dark" variant="bars" />;
+}
 export function MusicNowPlaying() {
     const fetcher = (url) => fetch(url).then((r) => r.json());
 
@@ -58,48 +57,40 @@ export function MusicNowPlaying() {
     return (
 
         <Box className="classes.root" align="center">
-            <Box classNames="classes.root">
                 <Paper sx={{ paddingBottom: '10px' }}>
                     <Title order={5} align="left">
-                        Now playing
+                        Currently listening to
                     </Title>
                 </Paper>
+            <Paper classNames="classes.selfPlayer" display={data || NowPlayingLoader}>
+                <Image
+                  radius="xs"
+                  height="200px"
+                  sx={{ backgroundImage: `url(${data?.album_img_url})` }}
+                  className={classes.card}
+                >
+                    <div>
+                    <Button className={classes.button} component="a" href={data?.song_url} target="_blank" variant="white" color="dark">
+                        Listen on Spotify
+                    </Button>
+                    </div>
+                </Image>
 
-            <Paper withBorder className={classes.selfPlayer} border={5}>
-                <Text size="sm">
-                    <Paper p={5}>
-                        {/*<Text className={classes.category} size="xs">*/}
-                        {/*    Now playing*/}
-                        {/*</Text>*/}
-                        <Text fw={700}>
-                            {data?.title}
-                        </Text>
-                        <Text size="sm" color="theme.white">
-                            {data?.artist}
-                        </Text>
+                <Box classNames="classes.root" display={data || NowPlayingLoader}>
+                    <Paper withBorder className={classes.selfPlayer}>
+                        <Stack spacing="1" overflow="hidden">
+                            <Text fz="sm" fw={700} sx={{ marginTop: '5px' }}>
+                                {data?.title}
+                            </Text>
+                            <Text fz="xs" className={classes.songData} sx={{ marginBottom: '5px' }}>
+                                {data?.artist}
+                            </Text>
 
+                        </Stack>
                     </Paper>
-
-                </Text>
+                </Box>
             </Paper>
-        <Paper
-          shadow="none"
-          p="xl"
-          radius="xs"
-            // width={"300px"}
-            // height={"300px"}
-          sx={{ backgroundImage: `url(${data?.album_img_url})` }}
-          className={classes.card}
-            // src={data?.album_img_url}
-            // alt={data?.album}
-        >
-            <div />
-            <Button className={classes.button} component="a" href={data?.song_url} target="_blank" variant="white" color="dark">
-                Listen on Spotify
-            </Button>
-        </Paper>
-
-            </Box>
         </Box>
+
     );
 }

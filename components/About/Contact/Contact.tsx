@@ -6,6 +6,7 @@ import {
     List,
     Paper,
     Flex,
+    Stack,
     Timeline,
     Divider,
     Center,
@@ -32,63 +33,60 @@ export function Contact() {
     const colorScheme = useColorScheme();
 
     return (
-<Center>
-        <Box className={classes.root}>
+        <Box>
+
+        <Stack spacing="xs" className={classes.root}>
             <Paper>
                 <Title order={5}>
                     Contact me
                 </Title>
             </Paper>
 
-            <Flex className={classes.section}>
                 <Button
                   component="a"
                   href="https://www.linkedin.com/in/xin-w"
                   target="_blank"
                   className={classes.buttonColor}
                   variant="outline"
-                  leftIcon={<IconBrandLinkedin />}
+                  leftIcon={<IconBrandLinkedin size="20px" />}
                 >
                     Connect on LinkedIn
                 </Button>
-            </Flex>
-            <Flex className={classes.section}>
+
                 <Button
                   component="a"
                   href="https://github.com/xinwang-git"
                   target="_blank"
                   className={classes.buttonColor}
                   variant="outline"
-                  leftIcon={<IconBrandGithub />}
+                  leftIcon={<IconBrandGithub size="20px" />}
                 >
                     Browse my GitHub
                 </Button>
-            </Flex>
-            <Flex className={classes.section}>
+
                 <Button
                   component="a"
                   href="mailto:xin@xinw.org"
                   target="_blank"
                   className={classes.buttonColor}
                   variant="outline"
-                  leftIcon={<IconMailForward />}
+                  leftIcon={<IconMailForward size="20px" />}
                 >
                     Send me an email
                 </Button>
-            </Flex>
-            <Flex className={classes.section}>
+
                 <Button
                   component="a"
                   href="/about/Xin_Wang_Resume.pdf"
                   target="_blank"
                   className={classes.buttonColor}
                   variant="outline"
-                  leftIcon={<IconFileDescription />}
+                  leftIcon={<IconFileDescription size="20px" />}
                 >
                     View current resume
                 </Button>
-            </Flex>
+
+        </Stack>
         </Box>
-</Center>
     );
 }

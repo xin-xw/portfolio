@@ -26,19 +26,14 @@ export default createStyles((theme) => ({
         filter: theme.colorScheme === 'dark' ? 'invert(90%)' : 'none',
     },
 
-    pfp: {
-        width: '225px',
-        height: '225px',
-        [theme.fn.smallerThan('xl')]: {
-            marginTop: '-50px',
-            paddingBottom: '250px',
-            width: '150px',
-            height: '150px',
-        },
-    },
     textUnderlineBold: {
         cursor: 'pointer',
         textDecoration: 'underline',
         fontWeight: 500,
+    },
+
+    musicSection: {
+
+        width: '225px',
     },
 }));

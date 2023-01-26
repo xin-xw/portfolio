@@ -14,6 +14,7 @@ export default createStyles((theme) => ({
         color: theme.colorScheme === 'dark' ? 'white' : 'gray',
     },
     cardTitle: {
+
         marginRight: '10px',
         marginLeft: '10px',
     },

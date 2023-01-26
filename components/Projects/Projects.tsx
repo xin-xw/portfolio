@@ -103,16 +103,16 @@ const splice = {
 export default function Projects() {
     return (
         <Grid gutter="lg">
-            <Grid.Col sm={6}>
+            <Grid.Col sm={12}>
                 <ProjectCard {...Explorify} />
             </Grid.Col>
-            <Grid.Col sm={6}>
+            <Grid.Col sm={12}>
                 <ProjectCard {...menttobe} />
             </Grid.Col>
-            <Grid.Col sm={6}>
+            <Grid.Col sm={12}>
                 <ProjectCard {...Spotability} />
             </Grid.Col>
-            <Grid.Col sm={6}>
+            <Grid.Col sm={12}>
                 <ProjectCard {...splice} />
             </Grid.Col>
         </Grid>

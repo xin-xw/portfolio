@@ -19,6 +19,7 @@ import {
     useMantineColorScheme,
     TimelineItem,
     Divider,
+
 } from '@mantine/core';
 import { useColorScheme, useMediaQuery } from '@mantine/hooks';
 import useStyles from './About.styles';
@@ -64,15 +65,16 @@ export function About() {
                 </Box>
             </Grid.Col>
             <Grid.Col md={4}>
-
-                <Stack direction="column" sx={{ alignItems: 'center' }}>
+                <Center>
+                <Stack className={classes.musicSection} direction="column">
 
                     <Contact />
                     <MusicNowPlaying />
                     <Music />
                 </Stack>
-
+                </Center>
             </Grid.Col>
+
         </Grid>
 
     );
