@@ -34,6 +34,7 @@ export default createStyles((theme) => ({
     },
     links: {
         [theme.fn.smallerThan('sm')]: {
+
             display: 'none',
         },
     },
@@ -52,7 +53,8 @@ export default createStyles((theme) => ({
         fontWeight: 500,
 
         [theme.fn.smallerThan('sm')]: {
-            fontSize: '14px',
+            padding: 'xl',
+
             // borderRadius: 0,
             // padding: theme.spacing.sm,
         },

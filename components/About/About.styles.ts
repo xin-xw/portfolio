@@ -12,22 +12,20 @@ export default createStyles((theme) => ({
             fontSize: 40,
         },
     },
-    description: { padding: 5,
+    description: {
         [theme.fn.smallerThan('md')]: {
         padding: 10,
-        paddingTop: '-75px',
+
         } },
 
     tableWrapper: {
-        width: '450px',
+        width: '500px',
 
     },
     table: {
         filter: theme.colorScheme === 'dark' ? 'invert(90%)' : 'none',
     },
-    timeline: {
-        verticalAlign: 'center',
-    },
+
     pfp: {
         width: '225px',
         height: '225px',

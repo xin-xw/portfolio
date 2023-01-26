@@ -6,7 +6,15 @@ export default createStyles((theme) => ({
 
         borderRadius: theme.radius.xs,
     },
-
+    button: {
+        width: '100%',
+        maxWidth: '500px',
+        color: theme.colorScheme === 'dark' ? 'white' : theme.colors.dark[9],
+        borderColor: theme.colorScheme === 'dark' ? 'white' : theme.colors.dark[9],
+        [theme.fn.smallerThan('md')]: {
+            width: '325px',
+        },
+    },
     item: {
         // backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
         border: '3px solid transparent',
@@ -23,7 +31,15 @@ export default createStyles((theme) => ({
             zIndex: 1,
         },
     },
-
+    buttonColor: {
+        width: '100%',
+        maxWidth: '500px',
+        color: theme.colorScheme === 'dark' ? 'white' : theme.colors.dark[9],
+        borderColor: theme.colorScheme === 'dark' ? 'white' : theme.colors.dark[9],
+        [theme.fn.smallerThan('md')]: {
+            width: '325px',
+        },
+    },
     chevron: {
         '&[data-rotate]': {
             transform: 'rotate(-90deg)',

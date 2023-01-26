@@ -61,7 +61,7 @@ export function Contact() {
                   variant="outline"
                   leftIcon={<IconBrandGithub />}
                 >
-                    Browse personal GitHub
+                    Browse my GitHub
                 </Button>
             </Flex>
             <Flex className={classes.section}>
@@ -73,7 +73,7 @@ export function Contact() {
                   variant="outline"
                   leftIcon={<IconMailForward />}
                 >
-                    Send me an e-mail
+                    Send me an email
                 </Button>
             </Flex>
             <Flex className={classes.section}>

@@ -25,7 +25,7 @@ import PopoverText from '../TextModifiers/PopoverText';
 
 export function Journey() {
     const { classes } = useStyles();
-    const matches = useMediaQuery('(min-width: 1200px)');
+    const matches = useMediaQuery('(min-width: 1000px)');
     const colorScheme = useColorScheme();
 
     return (

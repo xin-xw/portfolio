@@ -25,6 +25,33 @@ export default function Fonts() {
                 },
               {
                   '@font-face': {
+                      fontFamily: 'Proxima Nova',
+                      src: 'url(\'fonts/proxima-nova-bold.woff\'\') format("woff")',
+                      fontWeight: 700,
+                      fontStyle: 'normal',
+                  },
+
+              },
+              {
+                  '@font-face': {
+                      fontFamily: 'Proxima Nova',
+                      src: 'url(\'fonts/proxima-nova-reg.woff\'\') format("woff")',
+                      fontWeight: 400,
+                      fontStyle: 'normal',
+                  },
+
+              },
+              {
+                  '@font-face': {
+                      fontFamily: 'Proxima Nova',
+                      src: 'url(\'fonts/proxima-nova-light.woff\'\') format("woff")',
+                      fontWeight: 200,
+                      fontStyle: 'normal',
+                  },
+
+              },
+              {
+                  '@font-face': {
                       fontFamily: 'Gotham',
                       src: 'url(\'fonts/gothamblackitalic-webfont.woff2\'\') format("woff2")',
                       fontWeight: 700,
@@ -32,14 +59,6 @@ export default function Fonts() {
                   },
 
               },
-                // {
-                //     '@font-face': {
-                //         fontFamily: 'Greycliff CF',
-                //         src: `url('${heavy}') format("woff2")`,
-                //         fontWeight: 900,
-                //         fontStyle: 'normal',
-                //     },
-                // },
             ]}
         />
     );

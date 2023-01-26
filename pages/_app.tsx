@@ -2,21 +2,13 @@ import { useState } from 'react';
 import NextApp, { AppProps, AppContext } from 'next/app';
 import { getCookie, setCookie } from 'cookies-next';
 import Head from 'next/head';
-import { MantineProvider, TypographyStylesProvider, Box, Title, MantineThemeOverride, Container, ColorScheme, ColorSchemeProvider, Global } from '@mantine/core';
+import { MantineProvider, Container, ColorScheme, ColorSchemeProvider } from '@mantine/core';
 import { NotificationsProvider } from '@mantine/notifications';
 import { SpotlightAction, SpotlightProvider } from '@mantine/spotlight';
 import { useRouter } from 'next/router';
 import { IconHome, IconDirections, IconUser, IconBrandAsana } from '@tabler/icons';
 import NavigationBarUsage from '../components/Header/NavigationBar/NavigationBar.story';
 import Fonts from '../components/Fonts';
-// @ts-ignore
-
-// import { interBold } from '../../../../../fonts/InterBold.ttf';
-// import { interSemiBold } from '../public/fonts/InterSemiBold.ttf';
-// import { interExtraBold } from '../public/fonts/InterExtraBold.ttf';
-// import { interLight } from '../public/fonts/InterLight.ttf';
-// import { interMedium } from '../public/fonts/InterMedium.ttf';
-// import { interRegular } from '../public/fonts/InterRegular.ttf';
 
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {
     const router = useRouter();
@@ -70,7 +62,6 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
           <Fonts />
           <MantineProvider
             theme={
-
                 {
                     colorScheme,
                     colors: {
@@ -99,7 +90,6 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
                             '#181818',
                         ],
                     },
-
                     defaultRadius: 'xs',
                     primaryColor: 'gundam-blue',
                     primaryShade: { light: 5, dark: 7 },
@@ -110,9 +100,8 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
                         lg: 16,
                         xl: 20,
                     },
-
-                    fontFamily: 'Gotham, sans-serif',
-                    headings: { fontFamily: 'Lora, serif' },
+                    fontFamily: 'Proxima Nova, sans-serif',
+                    headings: { },
                     // fontFamily: 'Lora',
                     // headings: { fontFamily: 'Inter, sans-serif' },
 
@@ -129,7 +118,7 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
           <NotificationsProvider>
 
             <NavigationBarUsage />
-              <Container sx={{ paddingTop: '150px' }}>
+              <Container size="md" sx={{ paddingTop: '150px' }}>
               <Component {...pageProps} key={router.asPath} />
 
               </Container>
